@@ -1,0 +1,7 @@
+<p>comment-container works!</p>
+<div *ngFor="let comment of comments">
+  <app-comment [comment]="comment"></app-comment>
+  <div *ngIf="comment.replies > 0">
+    <button>See {{comment.replies}} Replies</button>
+  </div>
+</div>

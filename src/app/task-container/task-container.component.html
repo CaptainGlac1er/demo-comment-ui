@@ -1,0 +1,5 @@
+<p>task-container works!</p>
+<code>{{taskId$ | async | json}}</code>
+<ng-container *ngIf="taskId$ | async as taskId">
+  <app-comment-container [taskId]="taskId"></app-comment-container>
+</ng-container>

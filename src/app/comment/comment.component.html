@@ -1,0 +1,9 @@
+<p>comment works!</p>
+<ng-container *ngIf="comment">
+  <ng-container *ngIf="comment.type === 'EMAIL'">
+    <app-email [commentId]="comment.id"></app-email>
+  </ng-container>
+  <ng-container *ngIf="comment.type === 'COMMENT'">
+    {{comment.comment}}
+  </ng-container>
+</ng-container>
