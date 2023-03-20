@@ -11,9 +11,9 @@
   </ng-container>
 </ng-container>
 <mat-card-footer>
-  <button mat-button *ngIf="comment.replies > 0 && replies.length === 0" (click)="showReplies(comment)">See {{comment.replies}} Replies</button>
-  <button mat-button *ngIf="replies.length > 0" (click)="replies = []">Hide Replies</button>
-  <button mat-button *ngIf="comment.type === 'COMMENT'" (click)="emailComment(comment)">Email Comment</button>
+  <button mat-button *ngIf="comment.replies > 0 && replies.length === 0" (click)="showReplies(comment)" color="primary">See {{comment.replies}} Replies</button>
+  <button mat-button *ngIf="replies.length > 0" (click)="replies = []" color="primary">Hide Replies</button>
+  <button mat-button *ngIf="comment.type === 'COMMENT'" (click)="emailComment(comment)" color="primary">Email Comment</button>
 </mat-card-footer>
 </mat-card>
 <div *ngIf="replies" class="offset">
