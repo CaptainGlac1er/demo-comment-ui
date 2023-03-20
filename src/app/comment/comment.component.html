@@ -1,9 +1,21 @@
-<p>comment works!</p>
+<mat-card>
 <ng-container *ngIf="comment">
   <ng-container *ngIf="comment.type === 'EMAIL'">
     <app-email [commentId]="comment.id"></app-email>
   </ng-container>
   <ng-container *ngIf="comment.type === 'COMMENT'">
-    {{comment.comment}}
+    <mat-card-title>(({{comment.id}})) {{comment.user}} - {{comment.timestamp}}</mat-card-title>
+    <mat-card-content>
+      {{comment.comment}}
+    </mat-card-content>
   </ng-container>
 </ng-container>
+<mat-card-footer>
+  <button mat-button *ngIf="comment.replies > 0 && replies.length === 0" (click)="showReplies(comment)">See {{comment.replies}} Replies</button>
+  <button mat-button *ngIf="replies.length > 0" (click)="replies = []">Hide Replies</button>
+  <button mat-button *ngIf="comment.type === 'COMMENT'" (click)="emailComment(comment)">Email Comment</button>
+</mat-card-footer>
+</mat-card>
+<div *ngIf="replies" class="offset">
+  <app-comment *ngFor="let reply of replies" [comment]="reply"></app-comment>
+</div>

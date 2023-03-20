@@ -1,1 +1,6 @@
-<p>email works!</p>
+<mat-card *ngIf="email">
+    <mat-card-title><<{{email.id}}>> {{email.emailRecipients | json}} - {{email.timestamp}}</mat-card-title>
+    <mat-card-content>
+      {{email.emailContents}}
+    </mat-card-content>
+</mat-card>

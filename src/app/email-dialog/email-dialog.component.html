@@ -1,0 +1,7 @@
+<div [formGroup]="emailDialog">
+<mat-form-field>
+  <mat-label>Emails (JSON)</mat-label>
+  <input matInput [formControl]="emailDialog.controls.input">
+</mat-form-field>
+</div>
+<button (click)="closeDialog()">Send</button>

@@ -1,15 +1,15 @@
-<p>email-reply works!</p>
-<div>
-  <div>
-    <label>From</label>
-    <input>
-  </div>
-  <div>
-    <label>Reply to</label>
-    <input>
-  </div>
-  <div>
-    <label>Message</label>
-    <input>
-  </div>
+<div [formGroup]="mockReplyEmail">
+  <mat-form-field>
+    <mat-label>From</mat-label>
+    <input matInput [formControl]="mockReplyEmail.controls.user">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email Id</mat-label>
+    <input matInput [formControl]="mockReplyEmail.controls.emailId">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <input matInput [formControl]="mockReplyEmail.controls.message">
+  </mat-form-field>
 </div>
+<button mat-button (click)="sendReply()">Send</button>

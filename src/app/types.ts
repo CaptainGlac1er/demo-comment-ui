@@ -7,3 +7,10 @@ export type Comment = {
   replies: number
 
 }
+
+export type Email = {
+  id: number;
+  emailRecipients: string[],
+  emailContents: string,
+  timestamp: string
+}
